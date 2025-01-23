@@ -1,0 +1,67 @@
+* {
+    background-color: rgb(37, 33, 33);
+    color: white;
+    margin: 0px;
+}
+
+.navBar {
+    display: flex;
+    margin: 0px;
+    height: 100px;
+    width: auto;
+    background-color: rgb(91, 31, 189);
+}
+
+.titolo {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background-color: rgb(54, 47, 47);
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 100;
+}
+
+.navbarItems {
+    display: flex;
+    flex: 1;
+    list-style-type: none;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+    background-color: rgb(91, 31, 189);
+    text-decoration: none;
+}
+
+.navbarItems li {
+    background-color: rgb(88, 49, 153);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.navbarItems li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.2);
+    transition: left 0.3s ease;
+}
+.navbarItems li:hover::before {
+    left: 0;
+    animation: hoverAnimation 1s    ;
+}
+@keyframes hoverAnimation {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
